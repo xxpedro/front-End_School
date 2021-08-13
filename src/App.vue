@@ -1,10 +1,18 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <navBarComponent></navBarComponent>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
+
+<script>
+import navBarComponent from '../src/components/navBarComponent.vue'
+export default {
+  components: {
+    navBarComponent
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -16,7 +24,7 @@
 }
 
 #nav {
-  padding: 30px;
+  margin-bottom: 30px;
 
   a {
     font-weight: bold;

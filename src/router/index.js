@@ -1,5 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import StudentsForm from '../views/StudentView.vue'
+import TeacherForm from '../views/TeacherView.vue'
+import MatterAsigmentView from '../views/MatterAsigmentView.vue'
+import MattersView from '../views/MattersView.vue'
+import EditCourses from '../components/EditCourses.vue'
+import EditTeachers from '../components/EditTeacher.vue'
+import StudentsEdit from '../components/StudentsEdit.vue'
+
+
+
 
 const routes = [
   {
@@ -8,13 +18,43 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/Students',
+    name: 'Students',
+    component: StudentsForm
+  },
+  {
+    path: '/Teacher',
+    name: 'Teacher',
+    component: TeacherForm
+  },
+  {
+    path: '/MatterAsigment',
+    name: 'MatterAsigment',
+    component: MatterAsigmentView
+  },
+  {
+    path: '/MattersView',
+    name: 'MattersView',
+    component: MattersView
+  },
+  {
+    path: '/EditCourses/:id',
+    name: 'EditCourses',
+    component: EditCourses
+  },
+  {
+    path: '/EditTeachers/:id',
+    name: 'EditTeachers',
+    component: EditTeachers
+  },
+  {
+    path: '/EditStudent/:id',
+    name: 'EditStudent',
+    component: StudentsEdit
   }
+
+
+
 ]
 
 const router = createRouter({
